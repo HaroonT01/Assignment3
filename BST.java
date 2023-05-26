@@ -263,14 +263,15 @@ if(root == null){
 else{
     int hRight = root.getRight;
     int hLeft = root.getLeft;
-    int height = Math.max(hRight, hLeft) +1;
-   return height;
+    return  Math.max(hRight, hLeft) +1;
 }
 
 }
 
 Node parent(T value){
-    
+    if(root.getLeft || root.getRight == current.getValue){
+        return root;
+    }
 }
 
 
