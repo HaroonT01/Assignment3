@@ -263,13 +263,13 @@
   return -1;
  }
  else{
-     int hRight = root.getRight;
-     int hLeft = root.getLeft;
-     return  Math.max(hRight, hLeft) +1;
+
+     return  Math.max(root.getRight, root.getLeft) +1;
  }
  
  }
  
+<<<<<<< HEAD
  public int level(T value) {
     int level = 0;
 
@@ -324,6 +324,29 @@
     
 
 
+=======
+ public Node<T> parent(T value , Node<T> currentNode,Node<T> Parent) {
+         if(currentNode.getValue().equals(value)){
+     
+        return Parent;
+         }
+   else if(currentNode.getValue().compareTo(value)<0){
+        
+        return parent(value, currentNode.getLeft(), currentNode);
+     }
+     else if(currentNode.getValue().compareTo(value)> 0){
+        return parent(value, currentNode.getRight(), currentNode);
+     }
+     else {
+        return null;
+     }
+ 
+ }
+ 
+ 
+ 
+}
+>>>>>>> 517ba1601f352d22d4b52ddd30af4187dc07a6b1
 
  
  
