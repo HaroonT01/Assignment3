@@ -16,6 +16,8 @@
      public static final int INORDER = 0;
      public static final int PREORDER = 1;
      public static final int POSTORDER = 2;
+
+    private static final Throwable Exception = null;
      
      private LinkedQueue<T> inOrderQueue, preOrderQueue, postOrderQueue;
      
@@ -268,15 +270,60 @@
  
  }
  
-/*  Node parent(T value){
-     if(root.getLeft || root.getRight == current.getValue){
-         return root;
-     }
- }
- */
- 
- 
-}
+ public int level(T value) {
+    int level = 0;
+
+    //checks if tree is empty
+    if(root == null){
+        return -1;  
+    }
+
+    //checks if value is found at root
+    if(root.getValue().equals(value)){ 
+            level++;
+            return level;   
+    }
+
+    while(root != null) {
+        level++;
+    }
+
+        else {  //go through left and right child
+            while(root.getLeft() != null){
+                if(root.getValue().equals(value)) {
+                }
+                level++;
+            }
+            while(root.getRight() != null) {
+                if(root.getValue().equals(value)) {
+                }
+                level++;
+            }
+            return level;
+            }
+        }
+
+      
+    public boolean isPerfect(Node<T> root) {
+        if(root == null) {
+            return true;
+        }
+        else {
+            if(!(height(root.getLeft()) == height(root.getRight()))) {
+                return false;
+            }
+            else {
+                if(isPerfect(root.getLeft()) && isPerfect(root.getRight())) {
+                    return true;
+                }
+            }
+        }
+        return true;
+    }
+    }
+    
+
+
 
  
  
