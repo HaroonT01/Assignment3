@@ -261,19 +261,30 @@
   return -1;
  }
  else{
-     int hRight = root.getRight;
-     int hLeft = root.getLeft;
-     return  Math.max(hRight, hLeft) +1;
+
+     return  Math.max(root.getRight, root.getLeft) +1;
  }
  
  }
  
-/*  Node parent(T value){
-     if(root.getLeft || root.getRight == current.getValue){
-         return root;
+ public Node<T> parent(T value , Node<T> currentNode,Node<T> Parent) {
+         if(currentNode.getValue().equals(value)){
+     
+        return Parent;
+         }
+   else if(currentNode.getValue().compareTo(value)<0){
+        
+        return parent(value, currentNode.getLeft(), currentNode);
      }
+     else if(currentNode.getValue().compareTo(value)> 0){
+        return parent(value, currentNode.getRight(), currentNode);
+     }
+     else {
+        return null;
+     }
+ 
  }
- */
+ 
  
  
 }
